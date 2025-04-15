@@ -1,0 +1,83 @@
+:root {
+  /* Font & Typography */
+  font-family: 'Inter', 'Segoe UI', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Color Scheme */
+  color-scheme: dark;
+  color: #e0e0e0;
+  background-color: #121212;
+
+  /* Accent Colors */
+  --accent: #7f5af0;
+  --accent-hover: #9a8cfc;
+  --background: #121212;
+  --panel: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Button */
+button {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.4em;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+  border-color: var(--accent);
+  background-color: #292929;
+  transform: scale(1.02);
+}
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5em 1.2em;
+  }
+}
