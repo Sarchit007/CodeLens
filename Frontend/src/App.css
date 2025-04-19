@@ -1,9 +1,12 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -13,15 +16,24 @@ body,
   width: 100%;
   background: linear-gradient(to right, #0f0f0f, #1a1a1a);
   color: #f1f1f1;
-  overflow: hidden;
+  overflow: auto; /* Changed from hidden to allow scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Main Layout */
 main {
-  height: calc(100vh - 4rem); /* subtract navbar height */
+  height: calc(100vh - 4rem);
   width: 100%;
   padding: 1.5rem;
   display: flex;
   gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Panels Shared */
@@ -38,7 +50,7 @@ main .right {
 
 main .left:hover,
 main .right:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px); /* Subtler lift */
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -63,7 +75,7 @@ main .left {
 .code pre code {
   width: 100%;
   min-height: 100%;
-  white-space: pre; 
+  white-space: pre;
   color: #e6e6e6;
   font-family: 'Fira Code', monospace;
   font-size: 1rem;
@@ -91,16 +103,28 @@ main .left .review:hover {
   box-shadow: 0 6px 24px rgba(102, 166, 255, 0.8);
 }
 
+main .left .review:focus-visible {
+  outline: 3px solid #66a6ff;
+  outline-offset: 4px;
+}
+
+main .left .review:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 12px rgba(102, 166, 255, 0.6);
+}
+
 /* Right Panel - Output / Review Result */
 main .right {
   padding: 2rem;
   font-size: 1.15rem;
   line-height: 1.7;
-  background: rgba(52, 52, 52, 0.4);
+  background-color: rgba(52, 52, 52, 0.6);
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #eaeaea;
   overflow-y: auto;
   position: relative;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Custom Scrollbars */
@@ -121,9 +145,30 @@ main .right::-webkit-scrollbar-thumb,
   border-radius: 4px;
 }
 
-/* Firefox */
+/* Firefox Scrollbar */
 main .right,
 .left .code {
   scrollbar-width: thin;
   scrollbar-color: #444 transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    height: auto;
+  }
+
+  main .left,
+  main .right {
+    width: 100%;
+    height: auto;
+  }
+
+  .left .review {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
