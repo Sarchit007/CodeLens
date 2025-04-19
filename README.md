@@ -41,26 +41,31 @@ git clone https://github.com/your-username/codelens.git
 cd codelens
 
 ### 2. Install Dependencies
-Backend
-`bash
+backend
 cd server
-npm install`
+npm install
 ---
-`Frontend
+Frontend
 bash
+
 cd ../client
 npm install
 
 ### 3. Set Environment Variables
 Create a .env file in the server/ directory with:
-
-ini
 PORT=5000
 MONGODB_URI=your_mongodb_uri
 GEMINI_API_KEY=your_api_key
 
-## 4. Run the App
+### 4. Run the App
 bash
 npm run dev
 
+## 📸 Preview:-
+
+![Screenshot 2025-04-19 193636](https://github.com/user-attachments/assets/e843bee2-870b-40a6-8c2c-b6781e0c73d9)
+![Screenshot 2025-04-19 200705](https://github.com/user-attachments/assets/36c3412e-4558-4263-a151-a0cc354ef07f)
+![Screenshot 2025-04-19 194856](https://github.com/user-attachments/assets/417120c7-c841-4d1d-acf1-1bbcc0e9ad85)
+![Screenshot 2025-04-19 194922](https://github.com/user-attachments/assets/e8cefdb7-894d-4466-a3f2-ec6158073d57)
+![Screenshot 2025-04-19 195005](https://github.com/user-attachments/assets/c04f369e-254b-4298-9cd1-25e271b2c638)
 
